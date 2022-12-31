@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
     fs.createReadStream("site.html").pipe(res);
     fetchWebsite("https://clideo.com/editor/");
   } catch (error) {
-    return res.status(500).json({ error: "server error" });
+    return res.status(500).json({ error: error.message });
   }
 });
 
